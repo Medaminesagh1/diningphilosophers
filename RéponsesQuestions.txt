@@ -1,0 +1,11 @@
+Question1:Lorsque chaque philosophe tente de prendre une baguette, on utilise un bloc synchronisé pour gérer l'accès à cette ressource.
+Si une baguette est déjà prise par un autre philosophe, 
+celui qui tente de l'utiliser appelle la méthode wait() pour se suspendre jusqu'à ce que la ressource soit libérée.
+Lorsqu'un philosophe termine de manger et libère une baguette, la méthode notifyAll() est appelée pour réveiller tous les philosophes en attente,
+leur permettant ainsi de réessayer de prendre la baguette.
+
+Question2:Le deadlock se produit lorsque tous les philosophes attendent qu'un autre philosophe relâche la baguette qu'il retient. 
+Cependant, puisque chaque philosophe attend la même chose, personne ne libère sa baguette et tout le monde reste bloqué. 
+Pour éviter cette situation, il est essentiel de gérer l'allocation des ressources (baguettes) de manière à éviter cette attente circulaire. 
+Par exemple, en imposant un ordre pour prendre les baguettes ou en limitant le nombre de philosophes pouvant prendre des ressources simultanément.
+
